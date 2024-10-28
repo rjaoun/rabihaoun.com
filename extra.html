@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title></title>
+	<style>
+	#parentdiv {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #ac5;
+  border-radius: 150px;
+	margin: 500px;
+	background: url('images/rabih-test.jpg');
+
+}
+
+.div2 {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-color: #ac5;
+	border-radius: 150px;
+
+	
+}
+	</style>
+</head>
+
+<body>
+  <div id="parentdiv"></div>
+<script>
+	/* This code was taken from stackoverflow and here is the reference to that code
+	 * https://stackoverflow.com/questions/16613809/how-to-create-circles-around-a-circle-with-css-javascript
+	 */
+var div = 360 / 10;
+var radius = 250;
+var parentdiv = document.getElementById('parentdiv');
+var offsetToParentCenter = parseInt(parentdiv.offsetWidth / 2); //assumes parent is square
+var offsetToChildCenter = 50;
+var totalOffset = offsetToParentCenter - offsetToChildCenter;
+// for loop to create 8 small circles around the big circle
+for (var i = 1; i <= 10; ++i) {
+  var childdiv = document.createElement('div');
+  childdiv.className = 'div2';
+	childdiv.style.position = 'absolute';
+	if ( i == 1){
+		childdiv.style.background = 'url(images/js-icon.png) no-repeat center';
+	}
+	else if ( i == 2){
+		childdiv.style.background = 'url(images/php-icon.png) no-repeat center';
+	}
+	else if ( i == 3){
+		childdiv.style.background = 'url(images/css-icon.png) no-repeat center';
+	}
+	else if ( i == 4){
+		childdiv.style.background = 'url(images/photoshop-icon.png) no-repeat center';
+	}
+	else if ( i == 5){
+		childdiv.style.background = 'url(images/sass-icon.png) no-repeat center';
+	}
+	else if ( i == 6){
+		childdiv.style.background = 'url(images/git-icon.png) no-repeat center';
+	}
+	else if ( i == 7){
+		childdiv.style.background = 'url(images/html-icon.png) no-repeat center';
+	}
+	else if ( i == 8){
+		childdiv.style.background = 'url(images/xml-icon.png) no-repeat center';
+	}
+	else if ( i == 9){
+		childdiv.style.background = 'url(images/jquery-icon.png) no-repeat center';
+	}	
+	else{
+		childdiv.style.background = 'url(images/bootstrap-icon.png) no-repeat center';
+	}
+	
+  var y = Math.sin((div * i) * (Math.PI / 180)) * radius;
+  var x = Math.cos((div * i) * (Math.PI / 180)) * radius;
+  childdiv.style.top = (y + totalOffset).toString() + "px";
+  childdiv.style.left = (x + totalOffset).toString() + "px";
+  parentdiv.appendChild(childdiv);
+}
+</script>
+</html>
