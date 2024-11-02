@@ -24,7 +24,7 @@
 
 </head>
 <body>
-	<h1>Test</h1>
+	
 <?php require_once 'body/header.php'; ?>
 
 <?php require_once 'body/main.php'; ?>
