@@ -31,12 +31,12 @@
 
 <?php require_once 'body/footer.php'; ?>
 <!-- Using MixItUp Library -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 $(function(){
   $('#portfolio').mixitup({
     targetSelector: '.item',
     transitionSpeed: 600
   });
 });
-</script> -->
+</script>
 </body>
